@@ -7,65 +7,63 @@
     <link rel="stylesheet" href="jogo.css">
 </head>
 <body>
-    
-    <h1 class="titulo">Mini projeto - Jogo das pétalas</h1>
+    <div class="header">
+        <b class="vidas">Vidas: 4</b>
+
+        <div class="titulo">
+            <h1>Jogo das pétalas</h1> 
+        </div>
+
+        <div class="button-container">
+            <button class="reiniciar"><a style="text-decoration: none" onclick="location.reload()">Reiniciar</a></button>
+            <button class="voltar"><a style="text-decoration: none" href="../index.html">Voltar</a></button>
+        </div>
+    </div>
 
     <h3 class="dica-container">
         <p>Dica: <span class="dica-texto">Nome de uma flor</span></p>
     </h3>
 
-     <div id="flor-wrapper">
-        <div id="flor-container">
-            <div class="petala" style="--i: 0"></div>
-            <div class="petala" style="--i: 1"></div>
-            <div class="petala" style="--i: 2"></div>
-            <div class="petala" style="--i: 3"></div>
-            <div class="petala" style="--i: 4"></div>
-            <div class="petala" style="--i: 5"></div>
-            <div class="petala" style="--i: 6"></div>
-            <div class="petala" style="--i: 7"></div>
-        </div>
+     <div id="flor">
+        <img src="../FotoFlor/4_petala.png" alt="petalas" id="florPetalas" width="200" height="200">
     </div>
-
     
     <div class="palavra-container">
-        
     </div>
-
 
     <div class="teclado">
-    <div class="teclado-linha">
-        <button class="letras-teclado">Q</button>
-        <button class="letras-teclado">W</button>
-        <button class="letras-teclado">E</button>
-        <button class="letras-teclado">R</button>
-        <button class="letras-teclado">T</button>
-        <button class="letras-teclado">Y</button>
-        <button class="letras-teclado">U</button>
-        <button class="letras-teclado">I</button>
-        <button class="letras-teclado">O</button>
-        <button class="letras-teclado">P</button>
-    </div>
-    <div class="teclado-linha">
-        <button class="letras-teclado">A</button>
-        <button class="letras-teclado">S</button>
-        <button class="letras-teclado">D</button>
-        <button class="letras-teclado">F</button>
-        <button class="letras-teclado">G</button>
-        <button class="letras-teclado">H</button>
-        <button class="letras-teclado">J</button>
-        <button class="letras-teclado">K</button>
-        <button class="letras-teclado">L</button>
-    </div>
-    <div class="teclado-linha">
-        <button class="letras-teclado">Z</button>
-        <button class="letras-teclado">X</button>
-        <button class="letras-teclado">C</button>
-        <button class="letras-teclado">V</button>
-        <button class="letras-teclado">B</button>
-        <button class="letras-teclado">N</button>
-        <button class="letras-teclado">M</button>
-    </div>
+        <div class="teclado-linha">
+            <button id="Q" class="letras-teclado">Q</button>
+            <button id="W" class="letras-teclado">W</button>
+            <button id="E" class="letras-teclado">E</button>
+            <button id="R" class="letras-teclado">R</button>
+            <button id="T" class="letras-teclado">T</button>
+            <button id="Y" class="letras-teclado">Y</button>
+            <button id="U" class="letras-teclado">U</button>
+            <button id="I" class="letras-teclado">I</button>
+            <button id="O" class="letras-teclado">O</button>
+            <button id="P" class="letras-teclado">P</button>
+        </div>
+        <div class="teclado-linha">
+            <button id="A" class="letras-teclado">A</button>
+            <button id="S" class="letras-teclado">S</button>
+            <button id="D" class="letras-teclado">D</button>
+            <button id="F" class="letras-teclado">F</button>
+            <button id="G" class="letras-teclado">G</button>
+            <button id="H" class="letras-teclado">H</button>
+            <button id="J" class="letras-teclado">J</button>
+            <button id="K" class="letras-teclado">K</button>
+            <button id="L" class="letras-teclado">L</button>
+        </div>
+        <div class="teclado-linha">
+            <button id="Z" class="letras-teclado">Z</button>
+            <button id="X" class="letras-teclado">X</button>
+            <button id="C" class="letras-teclado">C</button>
+            <button id="V" class="letras-teclado">V</button>
+            <button id="B" class="letras-teclado">B</button>
+            <button id="N" class="letras-teclado">N</button>
+            <button id="M" class="letras-teclado">M</button>
+        </div>
 </div>
 
     <script src="jogo.js"></script>

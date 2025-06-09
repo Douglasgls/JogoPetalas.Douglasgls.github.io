@@ -7,13 +7,31 @@
     <link rel="stylesheet" href="jogador2.css">
 </head>
 <body>
-    <h1>Vamos esolher a palavra</h1>
+    <h1>Vamos escolher a palavra</h1>
 
+    
+
+    <div class="regras">
+        <h2 class="regras-titulo">Regras da Palavra</h2>
+        <span class="regras-texto">- Não pode conter caracteres especiais: !_@#$%^&*</span>
+        <span class="regras-texto">- A palavra deve ser de pelo menos 3 letras</span>
+        <span class="regras-texto">- A palavra deve ser de até 7 letras</span>
+        <span class="regras-texto">- Não pode conter espaços</span>
+        <span class="regras-texto">- Não deve conter números</span>
+    </div>
+
+
+    <span style="color: gray;">Palavra</span>
     <input type="text" name="palavraEscolhida" id="palavraEscolhida" placeholder="Palavra escolhida">
 
+    <span style="color: gray;">Dica Palavra</span>
     <input type="text" name="dicaPalavra" id="dicaPalavra" placeholder="Dica da palavra">
 
-    <button id="botaoConfirmar">Confirmar</button>
+    <div class="button-container">
+        <button class="voltar"><a style="text-decoration: none" href="../index.html">Voltar</a></button>
+        <button id="botaoConfirmar"><a style="text-decoration: none">Confirmar</a></button>
+    </div>
+
 
     <script src="jogador2.js"></script>
 

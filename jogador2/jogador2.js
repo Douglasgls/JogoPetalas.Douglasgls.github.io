@@ -5,35 +5,40 @@ botaoConfirmar.addEventListener('click', () => {
     const palavraEscolhida = document.getElementById('palavraEscolhida');
     const dicaPalavra = document.getElementById('dicaPalavra');
 
-    const palavraEscolhidaValida = validaInput(palavraEscolhida);
-    const dicaPalavraValida = validaInput(dicaPalavra);
+    const palavraEscolhidaValida = validaInput(palavraEscolhida, 7, 'palavra');
+    const dicaPalavraValida = validaInput(dicaPalavra, 25, 'dica');
 
     if (palavraEscolhidaValida.isValid && dicaPalavraValida.isValid) {
-        const dadosDoJogo = { palavra: palavraEscolhida.value, dica: dicaPalavra.value };
+        const dadosDoJogo = { 
+            palavra: palavraEscolhida.value,
+            dica: dicaPalavra.value
+        };
         localStorage.setItem('jogoAtual', JSON.stringify(dadosDoJogo));
-        window.location.href = 'jogar.html';
-        // const dadosSalvos = JSON.parse(localStorage.getItem('jogoAtual'));
-        // console.log(dadosSalvos.palavra);
-    }
-    else{
-        alert(palavraEscolhidaValida.message);
-        alert(dicaPalavraValida.message);
-    }
+        window.location.href = '../jogo/jogo.html';
+    }else{
+        if(palavraEscolhidaValida.message !== ''){
+            alert(palavraEscolhidaValida.message);
+        }
 
+        if(dicaPalavraValida.message !== ''){
+            alert(dicaPalavraValida.message);
+        }
+    }
 });
 
-function validaInput(input){
-    const regexLetrasEspacos = /^[a-zA-Z\s]+$/;
+function validaInput(input, maxLength, tipo) {
+    const valor = input.value.trim();
+    const regexLetras = /^[a-zA-Z]+$/;
 
-    if(input.value.trim() === '') {
-        return { isValid: false, message: 'O campo deve ser preenchido.' };
-    } else if(input.value.length > 46) {
-        return { isValid: false, message: 'O campo não pode ter mais de 46 caracteres.' };
+    if (valor === '') {
+        return { isValid: false, message: `O campo de ${tipo} deve ser preenchido.` };
+    } else if (valor.length > maxLength) {
+        return { isValid: false, message: `O campo de ${tipo} deve ter no máximo ${maxLength} caracteres.` };
     }
-    if (!regexLetrasEspacos.test(input.value)) {
-        return { isValid: false, message: 'O campo deve conter apenas letras e espaços.' };
+
+    if (tipo === 'palavra' && !regexLetras.test(valor)) {
+        return { isValid: false, message: `A ${tipo} deve conter apenas letras, sem espaços.` };
     }
-    else{
-        return { isValid: true, message: '' };
-    }
+
+    return { isValid: true, message: '' };
 }
