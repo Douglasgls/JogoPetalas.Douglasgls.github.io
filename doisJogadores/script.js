@@ -14,7 +14,7 @@ botaoConfirmar.addEventListener('click', () => {
             dica: dicaPalavra.value
         };
         localStorage.setItem('jogoAtual', JSON.stringify(dadosDoJogo));
-        window.location.href = '../jogo/jogo.html';
+        window.location.href = '../jogo/index.html';
     }else{
         if(palavraEscolhidaValida.message !== ''){
             alert(palavraEscolhidaValida.message);
