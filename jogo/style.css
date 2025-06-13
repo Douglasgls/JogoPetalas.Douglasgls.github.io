@@ -9,19 +9,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 35px;
     gap: 15%;
     width: 100%;
-    height: 70px;
     padding: 0 20px; 
 }
 
@@ -37,7 +34,6 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin: auto;
     color: #61dafb;
     font-family: 'CRAMPS', sans-serif;
     font-size: 1.8em;
@@ -48,38 +44,36 @@ body {
     font-size: 1.5em;
     color: #98c379;
     display: flex;
+    margin: 0;
     justify-content: center;
     align-items: center;
     font-family: "Sour Gummy", sans-serif;
 }
 
-.palavra-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    font-size: 64px;
+#flor img {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);  
 }
 
-.letra.vazio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.palavra-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .letra {
-    width: 20%;             
-    outline: none;
-    border: none;
-    display: flex;
-    justify-content: space-around;
+  font-size: 50px;
+  margin-top: 24px;
+  border-bottom: 13px solid #f0f0f0;
+  text-align: center;
+  transition: 0.3s;
+  width: 20px;
 }
 
 .teclado {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
     gap: 10px;
     padding-bottom: 15px;
 }
