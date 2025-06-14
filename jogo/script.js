@@ -72,7 +72,6 @@ function defineTracosPalavra(palavra){
   for (let i = 0; i < palavra.length; i++) {
     const span = document.createElement("span");
     span.setAttribute("class", "letra");
-    span.textContent = "____";
     container.appendChild(span);
 
     if(palavra.length > 12){

@@ -5,7 +5,7 @@ botaoConfirmar.addEventListener('click', () => {
     const palavraEscolhida = document.getElementById('palavraEscolhida');
     const dicaPalavra = document.getElementById('dicaPalavra');
 
-    const palavraEscolhidaValida = validaInput(palavraEscolhida, 7, 'palavra');
+    const palavraEscolhidaValida = validaInput(palavraEscolhida, 25, 'palavra');
     const dicaPalavraValida = validaInput(dicaPalavra, 25, 'dica');
 
     if (palavraEscolhidaValida.isValid && dicaPalavraValida.isValid) {
