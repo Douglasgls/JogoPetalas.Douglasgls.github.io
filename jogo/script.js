@@ -120,14 +120,14 @@ const divFlor = document.getElementById("flor");
 var letrasCertas = 0;
 let vidas = 4
 
-function atualizarFlorVidas(vidas) {
-  if(vidas >=1){
+async function atualizarFlorVidas(vidas) {
+  if(vidas >=0){
     const florAnterior = divFlor.querySelector("img");
     if (florAnterior) {
       divFlor.removeChild(florAnterior);
     }
     const flor = document.createElement("img");
-    flor.setAttribute("src", `../FotoFlor/${vidas}_petala.png`);
+    flor.setAttribute("src", `../FotoFlor/${vidas}_petala.jpg`);
     flor.setAttribute("width", "200");
     flor.setAttribute("height", "200");
     divFlor.appendChild(flor);
@@ -143,7 +143,7 @@ function letrasColoridasAleatorias(keys){
 letrasColoridasAleatorias(keys);
 
 keys.forEach(key => {
-  key.addEventListener('click', function() {
+  key.addEventListener('click', async function() {
     const letraPalavra = key.textContent.toLowerCase();
     const span = document.getElementsByClassName("letra");
     var acertou = false;
@@ -169,7 +169,10 @@ keys.forEach(key => {
     if(vidas === 0){
       mostraPalavra();
       desabilitarTeclado();
-      alertaJogador("Que pena, você perdeu!");
+      atualizarFlorVidas(vidas);
+      setTimeout(() =>{
+        alertaJogador("Que pena, você perdeu!");
+      },100)
     }
 
     if (letrasCertas === palavra.length) {
@@ -177,7 +180,7 @@ keys.forEach(key => {
       desabilitarTeclado();
       setTimeout(() =>{
         alertaJogador("Parabéns, você ganhou!");
-      },100)
+      },12000)
     }
 
   });

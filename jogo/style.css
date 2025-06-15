@@ -26,8 +26,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
 .header{
@@ -130,7 +130,7 @@ body {
     padding: 15px 20px;
     border: none;
     font-family: "Sour Gummy", sans-serif;
-    background-color: white;
+    background-color: rgba(66, 30, 45, 0.151);
     color: black;
     border-radius: 8px;
     cursor: pointer;
