@@ -85,7 +85,7 @@ function desabilitarTeclado(){
   keys.forEach(key => {
     key.disabled = true;
     if(key.style.backgroundColor !== "green" && key.style.backgroundColor !== "red"){
-      key.style.backgroundColor = "#c0c0c0";
+      key.style.backgroundColor = "#gray";
     }
   });
 }
@@ -107,6 +107,40 @@ function atualizaVidas(vidas){
 
 function alertaJogador(msg){
   alert(msg);
+}
+
+
+function startConfetti() {
+  console.log('startConfetti');
+  var duration = 15 * 1000;
+  var animationEnd = Date.now() + duration;
+  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+  function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+  }
+
+  var interval = setInterval(function() {
+  var timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+      return clearInterval(interval);
+  }
+
+  var particleCount = 50 * (timeLeft / duration);
+  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+  confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+  }, 250);
+}
+
+function musicaPerdedor(){
+  const musicaPerdedor = document.getElementById("trompeta");
+  musicaPerdedor.play()
+}
+
+function musicaVencedor(){
+  const musicaVencedor = document.getElementById("vencedor");
+  musicaVencedor.play()
 }
 
 const palavra = definePalavraDica();
@@ -139,7 +173,6 @@ function letrasColoridasAleatorias(keys){
     key.style.color = cores[Math.floor(Math.random() * cores.length)];
   });
 }
-
 letrasColoridasAleatorias(keys);
 
 keys.forEach(key => {
@@ -170,6 +203,7 @@ keys.forEach(key => {
       mostraPalavra();
       desabilitarTeclado();
       atualizarFlorVidas(vidas);
+      musicaPerdedor();
       setTimeout(() =>{
         alertaJogador("Que pena, você perdeu!");
       },100)
@@ -178,9 +212,11 @@ keys.forEach(key => {
     if (letrasCertas === palavra.length) {
       mostraPalavra();
       desabilitarTeclado();
-      setTimeout(() =>{
-        alertaJogador("Parabéns, você ganhou!");
-      },12000)
+      musicaVencedor();
+      startConfetti();
+      // setTimeout(() =>{
+      //   alertaJogador("Parabéns, você ganhou!");
+      // },100)
     }
 
   });
