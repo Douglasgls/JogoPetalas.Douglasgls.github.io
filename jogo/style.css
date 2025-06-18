@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/cramps-2');
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+header {
+    width: 100%;
+    height: auto;
+}
 
 body {
     background-color: #282c34;
@@ -9,7 +13,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
     padding: 20px;
     overflow-x: hidden;
@@ -148,8 +151,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     gap: 10px;
-    color: #e0e0e0;
+    color: rgb(124, 119, 119);
     font-size: 12px;
 }

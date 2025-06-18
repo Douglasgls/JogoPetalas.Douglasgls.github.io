@@ -173,6 +173,12 @@ function letrasColoridasAleatorias(keys){
     key.style.color = cores[Math.floor(Math.random() * cores.length)];
   });
 }
+function reiniciarJogo(){
+  setTimeout(() => {
+    location.reload();
+    alertaJogador("O jogo sera reiniciado em 3 segundos");
+  }, 3000);
+}
 letrasColoridasAleatorias(keys);
 
 keys.forEach(key => {
@@ -207,6 +213,7 @@ keys.forEach(key => {
       setTimeout(() =>{
         alertaJogador("Que pena, você perdeu!");
       },100)
+      reiniciarJogo();
     }
 
     if (letrasCertas === palavra.length) {
@@ -214,11 +221,11 @@ keys.forEach(key => {
       desabilitarTeclado();
       musicaVencedor();
       startConfetti();
+      reiniciarJogo();
       // setTimeout(() =>{
       //   alertaJogador("Parabéns, você ganhou!");
       // },100)
     }
-
   });
 });
 
