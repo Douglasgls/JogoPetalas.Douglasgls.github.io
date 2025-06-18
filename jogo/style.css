@@ -1,21 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/cramps-2');
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* body {
-    background-color: #282c34;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    margin: 0;
-    padding: 0;
-} */
-
 body {
     background-color: #282c34;
     color: #e0e0e0;
@@ -72,16 +57,6 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.7);  
 }
 
-/* .palavra-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
-  border: 2px solid #f0f0f0;
-  width: 75%;
-  gap: 10px;
-} */
-
 .palavra-container {
   display: flex;
   flex-wrap: wrap;
@@ -90,15 +65,6 @@ body {
   gap: 10px;
   padding: 20px;
 }
-
-/* .letra {
-  font-size: 50px;
-  border-bottom: 8px solid #f0f0f0;
-  text-align: center;
-  width: 60px;
-  height: 80px;
-  display: flex;
-} */
 
 .letra {
     color: #f1faeb;
@@ -176,4 +142,14 @@ body {
 .button-container button:hover {
     background-color: #1e6f85;
     transform: scale(1.05);
+}
+
+.creditos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+    color: #e0e0e0;
+    font-size: 12px;
 }
