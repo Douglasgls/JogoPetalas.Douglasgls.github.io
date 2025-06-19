@@ -239,9 +239,14 @@ body {
         height: 40px;
     }
 
+    .teclado-linha {
+        gap: 4px;
+        min-width: 100%;
+    }
+
     .letras-teclado {
-        font-size: 16px;
         padding: 8px 10px;
+        font-size: 4vw;
     }
 
     .vida-container {
